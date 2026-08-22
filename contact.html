@@ -1,19 +1,182 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | Angie Taylor</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="nav"><div class="wrap navin"><a class="brand" href="index.html">Angie Taylor</a><nav class="menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="music.html">Music</a><a class="active" href="contact.html">Contact</a></nav><button class="hamb" aria-label="Menu">☰</button></div></header>
-<section class="pageHero"><div class="wrap"><div class="eyebrow">Contact</div><h1>Connect with Angie</h1><p>For ministry, music, and other inquiries.</p></div></section>
-<main>
-<section class="contact-form-section" style="max-width:760px;margin:40px auto;padding:24px;">
-  <h2>Contact Angie</h2>
-  <p>For ministry, music, or booking inquiries, send Angie a message below.</p>
-  <form action="https://formspree.io/f/xqpznyeb" method="post" style="display:grid;gap:14px;">
-    <input type="hidden" name="_subject" value="New Angie Taylor Website Inquiry">
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none;">
-    <input name="name" type="text" placeholder="Name" required style="padding:14px;">
-    <input name="email" type="email" placeholder="Your email" required style="padding:14px;">
-    <input name="subject" type="text" placeholder="Subject" style="padding:14px;">
-    <textarea name="message" placeholder="Message" rows="7" required style="padding:14px;"></textarea>
-    <button type="submit" style="padding:14px;cursor:pointer;">Send Message</button>
-  </form>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact | Angie Taylor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="index.html">Angie Taylor</a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+    <button class="hamb" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="pageHero">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h1>Connect with Angie</h1>
+    <p>For ministry, music, and other inquiries.</p>
+  </div>
 </section>
+
+<main>
+  <section class="contact-form-section" style="max-width:760px;margin:40px auto;padding:24px;">
+    <h2>Contact Angie</h2>
+    <p>For ministry, music, or booking inquiries, send Angie a message below.</p>
+
+    <form
+      id="contact-form"
+      action="https://formspree.io/f/xqpznyeb"
+      method="POST"
+      style="display:grid;gap:14px;"
+    >
+      <input type="hidden" name="_subject" value="New Angie Taylor Website Inquiry">
+
+      <!-- Formspree spam trap -->
+      <input
+        type="text"
+        name="_gotcha"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+        style="position:absolute;left:-9999px;"
+      >
+
+      <input
+        name="name"
+        type="text"
+        placeholder="Name"
+        autocomplete="name"
+        required
+        style="padding:14px;"
+      >
+
+      <input
+        name="email"
+        type="email"
+        placeholder="Your email"
+        autocomplete="email"
+        required
+        style="padding:14px;"
+      >
+
+      <input
+        name="subject"
+        type="text"
+        placeholder="Subject"
+        style="padding:14px;"
+      >
+
+      <textarea
+        name="message"
+        placeholder="Message"
+        rows="7"
+        required
+        style="padding:14px;"
+      ></textarea>
+
+      <button
+        id="submit-button"
+        type="submit"
+        style="padding:14px;cursor:pointer;"
+      >
+        Send Message
+      </button>
+
+      <div
+        id="form-status"
+        role="status"
+        aria-live="polite"
+        style="min-height:24px;font-weight:600;"
+      ></div>
+    </form>
+  </section>
 </main>
-<footer class="footer"><div class="wrap footin"><div><a class="brand" href="index.html">Angie Taylor</a></div><div class="small">© 2026 Angie Taylor. All rights reserved.</div></div></footer><script src="script.js"></script></body></html>
+
+<footer class="footer">
+  <div class="wrap footin">
+    <div><a class="brand" href="index.html">Angie Taylor</a></div>
+    <div class="small">© 2026 Angie Taylor. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+(function () {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const button = document.getElementById("submit-button");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    status.textContent = "";
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.textContent = "Message sent successfully. Thank you!";
+        button.textContent = "Message Sent";
+
+        setTimeout(function () {
+          status.textContent = "";
+          button.textContent = "Send Message";
+          button.disabled = false;
+        }, 5000);
+      } else {
+        let message = "There was a problem sending your message. Please try again.";
+        try {
+          const data = await response.json();
+          if (data && Array.isArray(data.errors) && data.errors.length) {
+            message = data.errors.map(error => error.message).join(" ");
+          }
+        } catch (_) {}
+
+        status.textContent = message;
+        button.textContent = "Send Message";
+        button.disabled = false;
+      }
+    } catch (error) {
+      status.textContent = "Unable to send right now. Please check your connection and try again.";
+      button.textContent = "Send Message";
+      button.disabled = false;
+    }
+  });
+
+  // Extra protection against browsers restoring old form values when navigating back.
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      form.reset();
+      status.textContent = "";
+      button.textContent = "Send Message";
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
