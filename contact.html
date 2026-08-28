@@ -3,180 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact | Angie Taylor</title>
+  <meta name="description" content="Contact Christian singer-songwriter Angie Taylor for church ministry, music, booking and women's ministry speaking inquiries.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://angietaylor.com/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Angie Taylor">
+  <meta property="og:title" content="Book Angie Taylor | Christian Music & Ministry">
+  <meta property="og:description" content="Contact Angie Taylor for Christian music, church ministry, booking and speaking inquiries.">
+  <meta property="og:url" content="https://angietaylor.com/contact">
+  <meta property="og:image" content="https://angietaylor.com/assets/angie-taylor.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Book Angie Taylor | Christian Music &amp; Ministry</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="index.html">Angie Taylor</a>
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="music.html">Music</a>
-      <a class="active" href="contact.html">Contact</a>
-    </nav>
-    <button class="hamb" aria-label="Menu">☰</button>
-  </div>
-</header>
-
-<section class="pageHero">
-  <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h1>Connect with Angie</h1>
-    <p>For ministry, music, and other inquiries.</p>
-  </div>
-</section>
-
-<main>
-  <section class="contact-form-section" style="max-width:760px;margin:40px auto;padding:24px;">
-    <h2>Contact Angie</h2>
-    <p>For ministry, music, or booking inquiries, send Angie a message below.</p>
-
-    <form
-      id="contact-form"
-      action="https://formspree.io/f/xqpznyeb"
-      method="POST"
-      style="display:grid;gap:14px;"
-    >
-      <input type="hidden" name="_subject" value="New Angie Taylor Website Inquiry">
-
-      <!-- Formspree spam trap -->
-      <input
-        type="text"
-        name="_gotcha"
-        tabindex="-1"
-        autocomplete="off"
-        aria-hidden="true"
-        style="position:absolute;left:-9999px;"
-      >
-
-      <input
-        name="name"
-        type="text"
-        placeholder="Name"
-        autocomplete="name"
-        required
-        style="padding:14px;"
-      >
-
-      <input
-        name="email"
-        type="email"
-        placeholder="Your email"
-        autocomplete="email"
-        required
-        style="padding:14px;"
-      >
-
-      <input
-        name="subject"
-        type="text"
-        placeholder="Subject"
-        style="padding:14px;"
-      >
-
-      <textarea
-        name="message"
-        placeholder="Message"
-        rows="7"
-        required
-        style="padding:14px;"
-      ></textarea>
-
-      <button
-        id="submit-button"
-        type="submit"
-        style="padding:14px;cursor:pointer;"
-      >
-        Send Message
-      </button>
-
-      <div
-        id="form-status"
-        role="status"
-        aria-live="polite"
-        style="min-height:24px;font-weight:600;"
-      ></div>
-    </form>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap nav-inner"><a class="brand" href="index.html" aria-label="Angie Taylor home">Angie Taylor</a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button><nav class="site-menu" id="site-menu" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="music.html">Music</a><a href="#booking">Ministry</a><a class="active" href="contact.html">Contact</a></nav></div></header>
+<main id="main">
+  <section class="page-hero"><div class="wrap"><p class="eyebrow">Contact &amp; Booking</p><h1 class="page-title">Connect with Angie</h1><p class="page-lead">For church ministry, music, booking, and speaking inquiries.</p></div></section>
+  <section class="content-section" id="booking">
+    <div class="wrap contact-layout">
+      <div class="contact-intro">
+        <p class="eyebrow" style="color:var(--gold-soft)">Ministry Inquiries</p>
+        <h2>Invite Angie to your church or event</h2>
+        <div class="gold-divider" aria-hidden="true"><span></span></div>
+        <p>Use the form to contact Angie about Christian music ministry, church services, concerts, or women’s ministry speaking opportunities.</p>
+        <p>Include the event date, location, and any helpful details in your message.</p>
+      </div>
+      <div class="contact-form-card">
+        <h2>Contact Angie</h2>
+        <p>Send a message and Angie will respond as soon as possible.</p>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xqpznyeb" method="POST">
+          <input type="hidden" name="_subject" value="New Angie Taylor Website Inquiry">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-full"><label for="subject">Subject</label><input id="subject" name="subject" type="text"></div>
+          <div class="field field-full"><label for="message">Message</label><textarea id="message" name="message" rows="7" required></textarea></div>
+          <div class="field-full"><button class="button button-primary" id="submit-button" type="submit">Send Message</button></div>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
   </section>
 </main>
-
-<footer class="footer">
-  <div class="wrap footin">
-    <div><a class="brand" href="index.html">Angie Taylor</a></div>
-    <div class="small">© 2026 Angie Taylor. All rights reserved.</div>
-  </div>
-</footer>
-
+<footer class="site-footer"><div class="wrap footer-grid"><div><a class="footer-brand" href="index.html">Angie Taylor</a><p>Christian Singer-Songwriter &amp; Speaker</p></div><div class="footer-links"><a href="music.html">Music</a><a href="#booking">Booking</a><a href="contact.html">Contact</a></div><div class="social-links"><a href="https://www.facebook.com/angietaylormusic/" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/angietaylormusic" target="_blank" rel="noopener">YouTube</a><a href="https://music.apple.com/us/artist/angie-taylor/1295796882" target="_blank" rel="noopener">Apple Music</a></div></div><div class="wrap copyright">© 2026 Angie Taylor. All rights reserved.</div></footer>
 <script src="script.js"></script>
-
-<script>
-(function () {
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-  const button = document.getElementById("submit-button");
-
-  if (!form) return;
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    status.textContent = "";
-    button.disabled = true;
-    button.textContent = "Sending...";
-
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: {
-          "Accept": "application/json"
-        }
-      });
-
-      if (response.ok) {
-        form.reset();
-        status.textContent = "Message sent successfully. Thank you!";
-        button.textContent = "Message Sent";
-
-        setTimeout(function () {
-          status.textContent = "";
-          button.textContent = "Send Message";
-          button.disabled = false;
-        }, 5000);
-      } else {
-        let message = "There was a problem sending your message. Please try again.";
-        try {
-          const data = await response.json();
-          if (data && Array.isArray(data.errors) && data.errors.length) {
-            message = data.errors.map(error => error.message).join(" ");
-          }
-        } catch (_) {}
-
-        status.textContent = message;
-        button.textContent = "Send Message";
-        button.disabled = false;
-      }
-    } catch (error) {
-      status.textContent = "Unable to send right now. Please check your connection and try again.";
-      button.textContent = "Send Message";
-      button.disabled = false;
-    }
-  });
-
-  // Extra protection against browsers restoring old form values when navigating back.
-  window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-      form.reset();
-      status.textContent = "";
-      button.textContent = "Send Message";
-      button.disabled = false;
-    }
-  });
-})();
-</script>
-
 </body>
 </html>
