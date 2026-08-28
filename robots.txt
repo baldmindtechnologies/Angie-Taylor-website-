@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://angietaylor.com/sitemap.xml
