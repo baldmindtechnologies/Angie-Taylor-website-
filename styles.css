@@ -44,6 +44,7 @@ a{color:inherit}
 .album-card img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .album-card h3{font-size:1.05rem;font-weight:500;margin:13px 0 3px}
 .text-link{font-size:.82rem;color:var(--wine);text-underline-offset:4px}
+.listen-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;font-size:.82rem}.listen-links a{color:var(--wine);text-underline-offset:4px}.listen-links a+a::before{content:"•";display:inline-block;margin-right:12px;color:var(--gold)}
 .centered-action{text-align:center;margin-top:38px}
 .booking-band{position:relative;color:#fff;background:radial-gradient(circle at 84% 35%,rgba(145,73,51,.42),transparent 36%),linear-gradient(110deg,var(--wine-deep),#651216 52%,#3b090c);overflow:hidden}
 .booking-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,rgba(210,167,68,.08));pointer-events:none}
@@ -70,10 +71,12 @@ a{color:inherit}
 .prose p{font-family:Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.9;margin:0 0 1.55em}
 .scripture{margin-top:48px;padding:28px 32px;background:var(--cream);border-left:4px solid var(--wine);font-family:Georgia,"Times New Roman",serif;font-style:italic}
 .music-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.platform-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 auto 34px}.platform-links a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--wine);font-weight:600;text-decoration:none;box-shadow:0 6px 18px rgba(42,23,18,.07)}.platform-links a:hover{border-color:var(--gold);transform:translateY(-1px)}
 .music-page-card{background:#fff;border:1px solid var(--line);padding:16px 16px 24px;text-align:center;border-radius:8px;box-shadow:var(--shadow)}
 .music-page-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:5px}
 .music-page-card h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.55rem;line-height:1.2;margin:20px 0 8px}
 .music-page-card p{color:var(--muted);min-height:52px}
+.music-buttons{display:grid;gap:10px}.music-buttons .button{width:100%;min-width:0;min-height:46px;padding:10px 16px}
 .contact-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:start}
 .contact-intro{padding:38px;background:linear-gradient(145deg,var(--wine-deep),var(--wine));color:#fff;border-radius:8px}
 .contact-intro h2,.contact-form-card h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:2.2rem;line-height:1.15;margin:0 0 18px}
@@ -106,7 +109,7 @@ a{color:inherit}
   .hero-grid{display:flex;flex-direction:column;min-height:auto}.hero-copy{padding:38px 0 0}.hero h1{font-size:clamp(3.35rem,16vw,5.2rem)}.hero-kicker{font-size:.73rem;letter-spacing:.2em;max-width:330px}.hero-copy .gold-divider{margin-top:10px}
   .button-row{width:100%;flex-direction:column;gap:12px;margin:18px 0 24px}.button-row .button{width:100%}.hero-image{height:400px;order:-1}.hero-image img{height:100%;max-height:none;object-position:center bottom}
   .music-section{padding-top:30px}.section-heading{gap:14px}.section-heading h2{font-size:1.65rem;white-space:nowrap}.album-grid{grid-template-columns:1fr;max-width:480px}
-  .album-card{display:grid;grid-template-columns:120px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;text-align:left;border-bottom:1px solid var(--line);padding-bottom:16px}.album-card>a:first-child{grid-row:1/3;width:120px;height:120px;align-self:center}.album-card img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover}.album-card h3{margin:0 0 5px 22px;font-size:1.2rem}.album-card .text-link{margin-left:22px}
+  .album-card{display:grid;grid-template-columns:120px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;text-align:left;border-bottom:1px solid var(--line);padding-bottom:16px}.album-card>a:first-child{grid-row:1/3;width:120px;height:120px;align-self:center}.album-card img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover}.album-card h3{margin:0 0 5px 22px;font-size:1.2rem}.album-card .text-link,.album-card .listen-links{margin-left:22px}.album-card .listen-links{justify-content:flex-start;gap:8px}.album-card .listen-links a+a::before{margin-right:8px}
   .centered-action{margin-top:26px}.booking-grid{grid-template-columns:1fr}.booking-invite,.booking-action{padding:35px 22px}.booking-invite{border-right:0;border-bottom:1px solid rgba(229,198,117,.55)}
   .about-home{padding:58px 0}.about-home-grid{grid-template-columns:1fr}.about-home img{width:min(330px,100%);max-width:330px;height:auto;aspect-ratio:1/1;object-fit:contain;object-position:center;margin:auto}
   .page-hero{padding:45px 0}.page-hero-grid{grid-template-columns:1fr}.page-hero-image{width:min(320px,100%);max-width:320px;height:auto;aspect-ratio:1/1;object-fit:contain;object-position:center;margin:auto}.page-title{font-size:3.2rem}.content-section{padding:52px 0}
